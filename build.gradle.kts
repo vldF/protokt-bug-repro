@@ -12,7 +12,10 @@ kotlin {
 
 protokt {
     generate {
-        all()
+        types = true
+        descriptors = true
+        grpcDescriptors = true
+        grpcKotlinStubs = true
     }
 }
 
@@ -22,7 +25,7 @@ tasks.withType<JavaCompile> {
 
 dependencies {
     implementation("com.google.protobuf:protobuf-java:3.21.7")
-    implementation("com.toasttab.protokt:protokt-runtime-grpc-jvm:1.0.0-beta.2")
+    //implementation("com.toasttab.protokt:protokt-runtime-grpc-jvm:1.0.0-beta.2")
     implementation("io.grpc:grpc-protobuf:1.64.0")
     implementation("io.grpc:grpc-kotlin-stub:1.4.1")
 }
